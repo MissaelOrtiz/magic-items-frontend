@@ -1,7 +1,7 @@
 # PLANNING
 1) Need fetch utils for all CRUD routes.
     1. Create,read, update, destroy
-        - read all, read one
+        - create, read all(items and types), read one, update one, delete one
 2) Create pages needed for display
     1. List page (home page)
         - need read all, links individual pages to details/update page

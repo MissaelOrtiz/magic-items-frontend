@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 import './App.css';
+import ListPage from "./ListPage";
+import CreatePage from "./CreatePage";
+import DetailPage from "./DetailPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <h2>My cool board games</h2>
+          <p><Link to="/">Home</Link></p>
+          <p><Link to="/create">Add game</Link>
+          </p>
+          <Switch>
+            <Route 
+              path="/" 
+              exact
+              render={(routerProps) => <ListPage {...routerProps} />} 
+            /> 
+              <Route 
+              path="/magicItems/:id" 
+              exact
+              render={(routerProps) => <DetailPage {...routerProps} />} 
+            />
+            <Route 
+              path="/create" 
+              exact
+              render={(routerProps) => <CreatePage {...routerProps} />} 
+            />          
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
-
-export default App;
