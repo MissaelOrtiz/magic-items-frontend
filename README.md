@@ -1,3 +1,35 @@
+# PLANNING
+1) Need fetch utils for all CRUD routes.
+    1. Create,read, update, destroy
+        - read all, read one
+2) Create pages needed for display
+    1. List page (home page)
+        - need read all, links individual pages to details/update page
+        - links to the create page
+    2. Details page (linked from individual cards)
+        - Needs read one, update, and destroy
+        - Updates from form on submit, not adding anything new to the api
+    3. Create page (linked from home page)
+        - Needs create, which will be inserted into api
+        - links back to homepage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
