@@ -16,9 +16,10 @@ export default class App extends Component {
       <Router>
         <div className="app">
           <header>
-            <h2>Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
+            <h2 className="banner">Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
             <div className="link-container">
               <button className="nav red"><Link to="/" className="white">All Wares</Link></button>
+              <img src="https://cdn.dribbble.com/users/3676423/screenshots/6583465/mimic-idle.gif" alt="a moving chest" className="mimic"/>
               <button className="nav blue"><Link to="/create" className="white">Add to the Hoard</Link></button>
             </div>
           </header>

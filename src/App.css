@@ -18,7 +18,7 @@
   margin: 10px;
   border: 5px double black;
   border-radius: 20px;
-  background-color: rgba(21, 49, 75, 0.699);
+  background-color: rgba(17, 69, 117, 0.527);
 }
 
 .item-card:hover {
@@ -73,7 +73,7 @@
 
 header {
   text-align: center;
-  background-color: #274d92;
+  background-color: #153269c5;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -100,4 +100,11 @@ header {
 .white {
   color: white;
   text-decoration: none;
+}
+
+.mimic {
+  width: 20%;
+  height: auto;
+  position: relative;
+  bottom: 100px;
 }
