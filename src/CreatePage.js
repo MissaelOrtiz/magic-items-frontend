@@ -62,8 +62,9 @@ export default class CreatePage extends Component {
                     <label className="input-card" >
                         Type
                         <select onChange={this.handleTypeChange} className="entry">
+                            <option value="" key="-1">Select Type</option>
                             {this.state.allTypes.map((type, i) =>
-                                <option defaultValue={type.name === this.state.type} value={type.name} key={i}>{type.name}</option>
+                                <option value={type.id} key={i}>{type.name}</option>
                                 )}
                         </select>
                     </label>
@@ -74,8 +75,9 @@ export default class CreatePage extends Component {
                     <label className="input-card">
                         Cursed
                         <select onChange={this.handleCursedChange} className="entry">
-                            <option value={false} key="tru">False</option>
-                            <option value={true} key="fals">True</option>
+                            <option value="" key="defa">Select Option</option>
+                            <option value={false} key="fals">False</option>
+                            <option value={true} key="tru">True</option>
                         </select>
                     </label>
                     <label className="input-card" >

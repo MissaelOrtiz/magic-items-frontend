@@ -49,7 +49,7 @@ export default class DetailPage extends Component {
     }
 
     handleDelete = async e => {
-        await deleteItem(this.params.id);
+        await deleteItem(this.props.match.params.id);
         this.props.history.push('/')
     }
 

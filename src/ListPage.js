@@ -15,7 +15,7 @@ export default class ListPage extends Component {
         return (
             <div className="item-container">
                 {
-                    this.state.magicItems.map(item => <Link to={`/magicItems/${item.id}`}>
+                    this.state.magicItems.map((item, i) => <Link to={`/magicItems/${item.id}`} key={i}>
                     <div className="item-card">
                         <p>{item.name}</p>
                         <p>Type: {item.type}</p>
