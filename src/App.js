@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
+  Link
 } from "react-router-dom";
 import './App.css';
 import ListPage from "./ListPage";
@@ -18,8 +17,10 @@ export default class App extends Component {
         <div>
           <header>
             <h2>Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
-            <p><Link to="/">All Wares</Link></p>
-            <p><Link to="/create">Add to the Hoard</Link></p>
+            <div className="link-container">
+              <p className="box"><Link to="/">All Wares</Link></p>
+              <p><Link to="/create">Add to the Hoard</Link></p>
+            </div>
           </header>
           <Switch>
             <Route 
