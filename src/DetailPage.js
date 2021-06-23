@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { getAllTypes, getOneItem, updateItem } from './utils'
+import { getAllTypes, getOneItem, updateItem, deleteItem } from './utils'
 
 export default class DetailPage extends Component {
     state = {
         name: '',
         type: '',
+        type_id: 0,
         allTypes: [],
         level: 0,
         cursed: '',
@@ -19,6 +20,7 @@ export default class DetailPage extends Component {
         this.setState({
             name: item.name,
             type: item.type,
+            type_id: item.type_id,
             allTypes: types,
             level: item.level,
             cursed: item.cursed,
@@ -31,7 +33,7 @@ export default class DetailPage extends Component {
     }
 
     handleTypeChange = e => {
-        this.setState({ type: e.target.value });
+        this.setState({ type_id: e.target.value });
     }
 
     handleLevelChange = e => {
@@ -46,12 +48,17 @@ export default class DetailPage extends Component {
         this.setState({ effect: e.target.value });
     }
 
+    handleDelete = async e => {
+        await deleteItem(this.params.id);
+        this.props.history.push('/')
+    }
+
     handleSubmit = async e => {
         e.preventDefault();
-
         await updateItem(this.props.match.params.id, {
             name: this.state.name,
             type: this.state.type,
+            type_id: this.state.type_id,
             level: this.state.level,
             cursed: this.state.cursed,
             effect: this.state.effect,
@@ -72,7 +79,7 @@ export default class DetailPage extends Component {
                         Type
                         <select onChange={this.handleTypeChange} className="entry">
                             {this.state.allTypes.map((type, i) =>
-                                <option defaultValue={type.name === this.state.type} value={type.name} key={i}>{type.name}</option>
+                                <option selected={type.id === this.state.type_id} value={type.id} key={i}>{type.name}</option>
                                 )}
                         </select>
                     </label>
@@ -83,15 +90,18 @@ export default class DetailPage extends Component {
                     <label className="input-card">
                         Cursed
                         <select onChange={this.handleCursedChange} className="entry">
-                            <option value={false} key="tru">False</option>
-                            <option value={true} key="fals">True</option>
+                            <option value={false} key="fals">False</option>
+                            <option selected={this.state.cursed} value={true} key="tru">True</option>
                         </select>
                     </label>
                     <label className="input-card" >
                         Effect
                         <textarea value={this.state.effect} onChange={this.handleEffectChange} className="effect-input entry"/>
                     </label>
-                    <button>Update Item</button>
+                    <div className="finalize-buttons">
+                        <button>Update Item</button>
+                        <button onClick={this.handleDelete}>Delete Item</button>
+                    </div>
                 </form>
             </div>
         )
