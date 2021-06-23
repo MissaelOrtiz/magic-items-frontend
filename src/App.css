@@ -9,6 +9,8 @@
   text-align: center;
   margin: 10px;
   border: 5px double black;
+  border-radius: 20px;
+  background-color: rgba(95, 158, 160, 0.411);
 }
 
 .update-container {
@@ -37,4 +39,25 @@
   height: 200px;
   width: 300px;
   word-wrap: break-word;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header {
+  text-align: center;
+  background-color: #363f50;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.box {
+  color: white;
 }
