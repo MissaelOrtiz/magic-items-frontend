@@ -16,10 +16,11 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <h2>Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
-          <p><Link to="/">All Wares</Link></p>
-          <p><Link to="/create">Add to the Hoard</Link>
-          </p>
+          <header>
+            <h2>Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
+            <p><Link to="/">All Wares</Link></p>
+            <p><Link to="/create">Add to the Hoard</Link></p>
+          </header>
           <Switch>
             <Route 
               path="/" 

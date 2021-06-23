@@ -4,7 +4,7 @@ import { createItem, getAllTypes } from './utils'
 export default class CreatePage extends Component {
     state = {
         name: '',
-        type: '',
+        type_id: 0,
         allTypes: [],
         level: 0,
         cursed: '',
@@ -43,7 +43,7 @@ export default class CreatePage extends Component {
         e.preventDefault();
         await createItem({
             name: this.state.name,
-            type: this.state.type,
+            type_id: this.state.type_id,
             level: this.state.level,
             cursed: this.state.cursed,
             effect: this.state.effect,
