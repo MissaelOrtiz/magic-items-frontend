@@ -16,9 +16,9 @@ export default class App extends Component {
     return (
       <Router>
         <div>
-          <h2>My cool board games</h2>
-          <p><Link to="/">Home</Link></p>
-          <p><Link to="/create">Add game</Link>
+          <h2>Albert's Wondrous Oddities, Trinkets, and Baubles</h2>
+          <p><Link to="/">All Wares</Link></p>
+          <p><Link to="/create">Add to the Hoard</Link>
           </p>
           <Switch>
             <Route 
